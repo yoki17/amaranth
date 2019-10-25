@@ -1,0 +1,32 @@
+div#box{
+  box-shadow: 15px -16px 31px -12px rgb(255, 166, 53);
+  width: 280px;
+  height: 280px;
+  margin: 34px 0 0 20px;
+  position: relative;
+  border-radius: 140px;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(rgb(255, 166, 53)), to(rgba(255, 166, 53, 0)));
+  background-image: -webkit-linear-gradient(rgb(255, 166, 53), rgba(255, 166, 53, 0));
+  background-image: -moz-linear-gradient(rgb(255, 166, 53), rgba(255, 166, 53, 0));
+  background-image: -o-linear-gradient(rgb(255, 166, 53), rgba(255, 166, 53, 0));
+  background-image: linear-gradient(rgb(255, 166, 53), rgba(255, 166, 53, 0));
+}
+div#box:after{}
+
+#box div{
+  display: block;
+  position: absolute;
+  border: 20px;
+  height: 0px;
+  width: 0px;
+  border: solid 20px transparent;
+}
+
+.backGroundBird{
+  z-index: -999;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  -webkit- transform: translateY(-50%) translateX(-50%);
+}
