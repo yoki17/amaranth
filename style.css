@@ -19,6 +19,7 @@ h1,
 h2,
 h3,
 h4 {
+  margin: 5px;
   color: var(--yellow);
 }
 html {
@@ -36,7 +37,7 @@ html {
 *,
 *:before,
 *:after {
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   margin: 0;
 }
 

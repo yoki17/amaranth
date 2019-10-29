@@ -1,0 +1,20 @@
+.arc2 .shape.a {
+  animation: sevenb 3s infinite linear;
+  top: calc(50% - 2em);
+  left: calc(50% - 9em);
+  transform-origin: 10em 50%;
+}
+.arc2 .shape.b {
+  animation: sevenb 6s infinite linear reverse;
+  background-color: yellow;
+  width: 2em;
+  height: 2em;
+  left: calc(50% - 1em);
+  top: calc(50% - 1em);
+}
+
+@keyframes sevenb {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}

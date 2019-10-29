@@ -1,0 +1,19 @@
+.exaggeration .shape {
+  animation: ten 4s infinite linear;
+  transform-origin: 50% 8em;
+  top: calc(50% - 6em);
+}
+
+@keyframes ten {
+  0%, 10% {
+    transform: none;
+    animation-timing-function: cubic-bezier(.87,-1.05,.66,1.31);
+  }
+  40% {
+    transform: rotateZ(-45deg) scale(2);
+    animation-timing-function: cubic-bezier(.16,.54,0,1.38);
+  }
+  70%, 100% {
+    transform: rotateZ(360deg) scale(1);
+  }
+}

@@ -1,0 +1,22 @@
+.timing .shape.a {
+  animation: nine 4s infinite cubic-bezier(.93,0,.67,1.21);
+  left: calc(50% - 12em);
+  transform-origin: 100% 6em;
+}
+.timing .shape.b {
+  animation: nine 2s infinite cubic-bezier(1,-0.97,.23,1.84);
+  left: calc(50% + 2em);
+  transform-origin: 100% 100%;
+}
+
+@keyframes nine {
+  0%, 10% {
+    transform: translateX(0);
+  }
+  40%, 60% {
+    transform: rotateZ(90deg);
+  }
+  90%, 100% {
+    transform: translateX(0);
+  }
+}

@@ -1,0 +1,63 @@
+.staging .shape.a {
+  transform: translateX(-12em);
+}
+
+.staging .shape.c {
+  transform: translateX(12em);
+}
+
+.staging .shape.b {
+  animation: three 5s infinite ease-out;
+  transform-origin: 0 6em;
+}
+
+.staging .shape.a, .staging .shape.c {
+  animation: threeB 5s infinite linear;
+}
+
+@keyframes three {
+  0%, 10% {
+    transform: none;
+    animation-timing-function: cubic-bezier(.57,-0.5,.43,1.53);
+  }
+  26%, 30% {
+    transform: rotateZ(-40deg);
+  }
+  32.5% {
+    transform: rotateZ(-38deg);
+  }
+  35% {
+    transform: rotateZ(-42deg);
+  }
+  37.5% {
+    transform: rotateZ(-38deg);
+  }
+  40% {
+    transform: rotateZ(-40deg);
+  }
+  42.5% {
+    transform: rotateZ(-38deg);
+  }
+  45% {
+    transform: rotateZ(-42deg);
+  }
+  47.5% {
+    transform: rotateZ(-38deg);
+    animation-timing-function: cubic-bezier(.57,-0.5,.43,1.53);
+  }
+  58%, 100% {
+    transform: none;
+  }
+}
+
+@keyframes threeB {
+  0%, 20% {
+    filter: none;
+  }
+  40%, 50% {
+    filter: blur(5px);
+  }
+  65%, 100% {
+    filter: none;
+  }
+}
