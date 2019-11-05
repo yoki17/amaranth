@@ -1,0 +1,160 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Amaranth/CSS-animation</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <!-- 参考:https://saruwakakun.com/html-css/reference/nav-drawer -->
+  <link rel="stylesheet" href="headerMenu.css">
+  <header>
+    <input id="nav-input" type="checkbox" class="nav-unshown">
+    <label id="nav-open" for="nav-input"><span></span></label>
+    <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+    <div id="nav-content">
+      <h2>article (記事)</h2>
+      <a href="#squashAndStretch">1: Squash and stretch<br>(押し潰しと伸縮)</a>
+      <a href="#anticipation">2: Anticipation<br>(予備動作)</a>
+      <a href="#Staging">3: Staging<br>(演出)</a>
+      <a href="#straightAheadActionAndPoseToPose">4: Straight-Ahead Action and Pose-to-Pose<br>(逐次描きと原画による設計)</a>
+      <a href="#followThroughAndOverlappingAction">5: Follow Through and Overlapping Action(継続する動きと後追いの動き)</a>
+      <a href="#slowInAndSlowOut">6: Slow In and Slow Out<br>(スローインとスローアウト)</a>
+      <a href="#arc1">7-1: arc1<br>(運動曲線)</a>
+      <a href="#arc2">7-2: arc2<br>(運動曲線)</a>
+      <a href="#secondaryAction">8: Secondary Action<br>(副次アクション)</a>
+      <a href="#timing">9: Timing<br>(タイミング)</a>
+      <a href="#exaggeration">10: Exaggeration<br>(誇張)</a>
+      <a href="#solidDrawing">11: Solid drawing<br>(立体感のある描画)</a>
+      <a href="#appeal">12: Appeal<br>(アピール力)</a>
+    </div>
+  </header>
+
+  <!-- 参考:https://cssanimation.rocks/jp/principles/ -->
+  <div style="margin: 10px;">ディズニー曰く、アニメーションは基本的に１２個の手法に気を付ければOKらしい。</div>
+
+  <style>
+    .principle {
+      display:block;
+    }
+    .shape {
+      background: #2d97db;
+      border: 1em solid #fff;
+      width: 4em;
+      height: 4em;
+      position: absolute;
+      top: calc(50% - 2em);
+      left: calc(50% - 2em);
+      z-index: -10;
+    }
+  </style>
+        
+  <article class="principle squashAndStretch">
+    <h2 id="squashAndStretch">Principle 1: Squash and stretch(押し潰しと伸縮)</h2>
+      <link rel="stylesheet" href="../asset/css/squashAndStretch.css">
+      <div class="shape"></div>
+      <div class="surface"></div>
+  </article>
+
+  <article class="principle anticipation">
+    <h2 id="anticipation">Principle 2: Anticipation(予備動作)</h2>
+      <link rel="stylesheet" href="../asset/css/anticipation.css">
+      <div class="shape"></div>
+      <div class="surface"></div>
+  </article>
+
+  <article class="principle staging">
+    <h2 id="staging">Principle 3: Staging(演出)</h2>
+      <link rel="stylesheet" href="../asset/css/stagin.css">
+      <div class="shape a">A</div>
+      <div class="shape b">B</div>
+      <div class="shape c">C</div>
+  </article>
+
+  <article class="principle straightAheadActionAndPoseToPose">
+    <h2 id="straightAheadActionAndPoseToPose">Principle 4: Straight-Ahead Action and Pose-to-Pose(逐次描きと原画による設計)</h2>
+      <link rel="stylesheet" href="../asset/css/straightAheadActionAndPoseToPose.css">
+        <div class="shape a">A</div>
+        <div class="shape b">B</div>
+  </article>
+
+  <article class="principle followThroughAndOverlappingAction">
+    <h2 id="followThroughAndOverlappingAction">Principle 5: Follow Through and Overlapping Action(継続する動きと後追いの動き)</h2>
+      <link rel="stylesheet" href="../asset/css/followThroughAndOverlappingAction.css">
+        <div class="shape-container">
+          <div class="shape"></div>
+        </div>
+  </article>
+
+  <article class="principle slowInAndSlowOut">
+    <h2 id="slowInAndSlowOut">Principle 6: Slow In and Slow Out(スローインとスローアウト)</h2>
+      <link rel="stylesheet" href="../asset/css/slowInAndSlowOut.css">
+      <div class="shape"></div>
+  </article>
+
+  <article class="principle arc1">
+    <h2 id="arc1">Principle 7-1: arc1(運動曲線)</h2>
+      <link rel="stylesheet" href="../asset/css/arc1.css">
+        <div class="shape-container">
+        <div class="shape"></div>
+    </div>
+  </article>
+
+  <article class="principle arc2">
+    <h2 id="arc2">Principle 7-2: arc2(運動曲線)</h2>
+      <link rel="stylesheet" href="../asset/css/arc2.css">
+        <div class="shape a"></div>
+        <div class="shape b"></div>
+  </article>
+
+  <article class="principle secondaryAction">
+    <h2 id="secondaryAction">Principle 8: Secondary Action(副次アクション)</h2>
+      <link rel="stylesheet" href="../asset/css/secondaryAction.css">
+        <div class="shape a">A</div>
+        <div class="shape b">B</div>
+        <div class="shape c">C</div>
+  </article>
+
+  <article class="principle timing">
+    <h2 id="timing">Principle 9: Timing(タイミング)</h2>
+      <link rel="stylesheet" href="../asset/css/timing.css">
+        <div class="shape a"></div>
+        <div class="shape b"></div>
+  </article>
+
+  <article class="principle exaggeration">
+    <h2 id="exaggeration">Principle 10: Exaggeration(誇張)</h2>
+      <link rel="stylesheet" href="../asset/css/exaggeration.css">
+        <div class="shape"></div>
+  </article>
+
+  <article class="principle solidDrawing">
+    <h2 id="solidDrawing">Principle 11: Solid drawing(立体感のある描画)</h2>
+      <link rel="stylesheet" href="../asset/css/solidDrawing.css">
+      <div class="shape">
+          <div class="container">
+            <span class="front">front</span>
+            <span class="back">back</span>
+            <span class="left">left</span>
+            <span class="right">right</span>
+            <span class="top">top</span>
+            <span class="bottom">bottom</span>
+          </div>
+        </div>
+  </article>
+
+  <article class="principle appeal">
+    <h2 id="appeal">Principle 12: Appeal(アピール力)</h2>
+      <link rel="stylesheet" href="../asset/css/appeal.css">
+      <div class="shape">
+        <div class="container">
+          <span class="item one">one</span>
+          <span class="item two">two</span>
+          <span class="item three">three</span>
+          <span class="item four">four</span>
+        </div>
+      </div>
+  </article>
+</body>
+</html>
