@@ -5,23 +5,7 @@
   --yellow: #f2b134;
   --main-bf-color: coral;
 }
-body {
-  background: var(--navy);
-  color: white;
-}
-a {
-  color: var(--teal-light);
-}
-a:hover {
-  color: var(--teal);
-}
-h1,
-h2,
-h3,
-h4 {
-  margin: 5px;
-  color: var(--yellow);
-}
+
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -32,6 +16,30 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+}
+
+body {
+  background: var(--navy);
+  color: white;
+}
+
+a {
+  color: var(--teal-light);
+}
+a:hover {
+  color: var(--teal);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 5px;
+  color: var(--yellow);
+}
+
+p{
+  margin-left: 5px;
 }
 
 *,
