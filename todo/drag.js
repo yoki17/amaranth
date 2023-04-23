@@ -33,15 +33,25 @@ function initialize() {
 
 // Element selection function
 function selectElement(event) {
-  event.preventDefault();
-  isDragging = true;
-  selectedElement = event.currentTarget;
-  mouseY = event.clientY || event.touches[0].clientY;
-  selectedElement.dataset.offsetY = selectedElement.dataset.offsetY || 0;
-  document.addEventListener('mousemove', moveElement);
-  document.addEventListener('mouseup', deselectElement);
-  document.addEventListener('touchmove', moveElement);
-  document.addEventListener('touchend', deselectElement);
+  if(
+    event.target.matches('.delete-button') ||
+    event.target.matches('.add-child-button') ||
+    event.target.matches('input[type="checkbox"]') ||
+    event.target.matches('.text') ||
+    event.target.matches('.edit')
+  ){
+    // do nothing
+  } else {
+    event.preventDefault();
+    isDragging = true;
+    selectedElement = event.currentTarget;
+    mouseY = event.clientY || event.touches[0].clientY;
+    selectedElement.dataset.offsetY = selectedElement.dataset.offsetY || 0;
+    document.addEventListener('mousemove', moveElement);
+    document.addEventListener('mouseup', deselectElement);
+    document.addEventListener('touchmove', moveElement);
+    document.addEventListener('touchend', deselectElement);  
+  }
 }
 
 // Element movement function
