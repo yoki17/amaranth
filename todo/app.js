@@ -4,7 +4,7 @@
  * It implements basic operations of the app such as adding, deleting, and editing.
  */
 
-// import { loadTodos, saveTodos } from './storage.js';
+import { loadTodos, saveTodos } from './storage.js';
 
 // DOM elements
 const form = document.querySelector('#app form');
@@ -15,13 +15,12 @@ const addChildBtn = document.querySelector('#addChildBtn');
 const childInput = document.querySelector('#childInput');
 const closeBtn = document.querySelector('.close');
 
-let selectedLi = null;
 let selectedTodo = null;
 
 // Retrieve todos from local storage or initialize with an empty array
-const todos = (() => {
+let todos = (() => {
     try {
-        return JSON.parse(localStorage.getItem('todos')) || [];
+        return JSON.parse(loadTodos('todos')) || [];
     } catch (e) {
         return [];
     }
@@ -34,9 +33,9 @@ function render() {
         const li = createTodoElement(todo, index);
         todoList.appendChild(li);
     });
-    localStorage.setItem('todos', JSON.stringify(todos));
+    saveTodos('todos', JSON.stringify(todos));
 
-    const todosRenderedEvent = new CustomEvent('todosRendered');
+    const todosRenderedEvent = new CustomEvent('appRendered');
     document.dispatchEvent(todosRenderedEvent);
 }
 
@@ -255,12 +254,7 @@ function updateTodoText(todosList, id, newText) {
 function addChild(event) {
     const deleteButton = event.target;
     const li = deleteButton.closest('li');
-    selectedLi = li;
     selectedTodo = li.getAttribute('data-id');
-    addChildPrompt();
-}
-
-function addChildPrompt() {
     addChildModal.style.display = 'block';
     childInput.value = '';
 }
@@ -330,6 +324,20 @@ childInput.addEventListener('keydown', function(event) {
         addChildModal.style.display = 'none';
     }
 });
+
+// drag.js Custom Event
+document.addEventListener('dragCustomEvent', dragEvent);
+
+function dragEvent() {
+    todos = (() => {
+        try {
+            return JSON.parse(loadTodos('todos')) || [];
+        } catch (e) {
+            return [];
+        }
+    })();
+    render();
+}
 
 // Initial render
 render();

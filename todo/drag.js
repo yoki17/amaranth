@@ -3,6 +3,8 @@
  * This file contains the JavaScript for implementing the drag movement functionality of the TODO items.
  */
 
+import { loadTodos, saveTodos } from './storage.js';
+
 // Variable declarations
 let selectedElement = null;
 let isDragging = false;
@@ -16,7 +18,7 @@ let zIndexCounter = 1;
 document.addEventListener('DOMContentLoaded', initialize);
 
 // Execute the initialization process when todos are rendered.
-document.addEventListener('todosRendered', initialize);
+document.addEventListener('appRendered', initialize);
 
 // Initialization function
 function initialize() {
@@ -61,4 +63,52 @@ function deselectElement() {
   document.removeEventListener('mouseup', deselectElement);
   document.removeEventListener('touchmove', moveElement);
   document.removeEventListener('touchmove', moveElement);
+
+  setLocalStorage();
+
+  const dragCustomEvent = new CustomEvent('dragCustomEvent');
+  document.dispatchEvent(dragCustomEvent);
+}
+
+// Set element order
+function setLocalStorage() {
+  const newOrder = getNewOrder();
+  let todos = (() => {
+    try {
+        return JSON.parse(loadTodos('todos')) || [];
+    } catch (e) {
+        return [];
+    }
+  })();
+
+  const updatedTodos = newOrder.map((newOrderItem) => {
+    const updatedTodo = todos.find((todo) => String(todo.id) === newOrderItem.id);
+    return updatedTodo;
+  });
+
+  saveTodos('todos', JSON.stringify(updatedTodos));
+}
+
+// Get new element order on display
+function getNewOrder() {
+  const taskList = document.getElementById('todo-list');
+  const children = Array.from(taskList.children);
+  let newOrder = [];
+
+  children.sort((a, b) => {
+    const rectA = a.getBoundingClientRect();
+    const rectB = b.getBoundingClientRect();
+
+    return rectA.top - rectB.top;
+  });
+
+  children.forEach((task) => {
+    const taskId = task.dataset.id;
+
+    newOrder.push({
+      id: taskId
+    });
+  });
+
+  return newOrder;
 }

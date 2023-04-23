@@ -1,11 +1,11 @@
-export function loadTodos() {
+export function loadTodos(id) {
   try {
-      return JSON.parse(localStorage.getItem('todos')) || [];
+      return JSON.parse(localStorage.getItem(id)) || [];
   } catch (e) {
       return [];
   }
 }
 
-export function saveTodos(todos) {
-  localStorage.setItem('todos', JSON.stringify(todos));
+export function saveTodos(id, list) {
+  localStorage.setItem(id, JSON.stringify(list));
 }
