@@ -66,8 +66,10 @@ function createEditInput(todo) {
     editInput.addEventListener('blur', endEditing);
     editInput.addEventListener('keydown', function (event) {
         if (event.key === 'Enter' && event.shiftKey) {
-            event.preventDefault();
-            event.target.blur();
+            if(event.cancelable){
+                event.preventDefault();
+                event.target.blur();    
+            }
         }
     });
     return editInput;
@@ -326,9 +328,11 @@ childInput.addEventListener('keydown', function(event) {
 });
 
 // drag.js Custom Event
-document.addEventListener('dragCustomEvent', dragEvent);
+document.addEventListener('dragCustomEvent', rerender);
+// storage.js Custom Event
+document.addEventListener('storageCustomEvent', rerender)
 
-function dragEvent() {
+function rerender() {
     todos = (() => {
         try {
             return JSON.parse(loadTodos('todos')) || [];
