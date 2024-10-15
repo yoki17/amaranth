@@ -1,0 +1,14 @@
+{
+  "item" : [
+    {
+      "startTime" : "00:00",
+      "endTime" : "10:00",
+      "schedule" : "Meeting"
+    },
+    {
+      "startTime" : "00:00",
+      "endTime" : "10:00",
+      "schedule" : "Meeting"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph</title>
+    <link rel="stylesheet" href="style.css?5">
+</head>
+
+<body>
+    <div id="app">
+        <h1>Graph's</h1>
+    </div>
+    <script type="module" src="storage.js"></script>
+    <script type="module" src="app.js"></script>
+
+    <!-- タブ操作 -->
+    <div class="tab">
+        <button class="tablinks tablink1">グラフ</button>
+        <button class="tablinks tablink2">スケジュール</button>
+        <button class="tablinks tablink3">その他</button>
+    </div>
+
+    <!-- グラフタブ -->
+    <div id="Tab1" class="tabcontent">
+        <div class="circle-container"></div>
+    </div>
+
+    <!-- スケジュールタブ -->
+    <div id="Tab2" class="tabcontent">
+        <!-- スケジュールコンテナ -->
+        <div class="schedule-container" id="scheduleContainer"></div>
+        <!-- オーバーレイ -->
+        <div id="overlay" class="overlay"></div>
+        <!-- 編集フォーム -->
+        <div id="editForm">
+            <label for="startTimeInput">開始時間:</label>
+            <input type="time" id="startTimeInput">
+            <label for="endTimeInput">終了時間:</label>
+            <input type="time" id="endTimeInput">
+            <label for="taskInput">タスク内容:</label>
+            <input type="text" id="taskInput">
+            <button class="saveTask">保存</button>
+            <button class="cancelEdit">キャンセル</button>
+        </div>
+    </div>
+
+    <!-- その他タブ -->
+    <div id="Tab3" class="tabcontent">
+        <h2>LSデータを上書き/読み込む</h2>
+        <form id="jsonForm">
+            <label for="jsonInput">JSONデータ:</label>
+            <textarea id="jsonInput" rows="10" placeholder='{"key":"value"}'></textarea>
+        </form>
+        <button type="button" class="saveData">データを書き込み</button>
+
+        <h3>読み出したたデータ:</h3>
+        <pre id="output"></pre>
+        <button type="button" class="loadData">データを読み込む</button>
+    </div>
+
+    <div class="footer">
+        <button class="saveBtn">save</button>
+        <button class="loadBtn">load</button>
+    </div>
+</body>
+
+</html>

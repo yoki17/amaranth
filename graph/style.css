@@ -1,0 +1,330 @@
+:root {
+  --main-bg-color: #1c1c1e;
+  --main-font-color: #f5f5f5;
+  --main-font-color-checked: #9a9a9a;
+  --main-botton-color: #007bff;
+  --main-botton-color-hover: #0056b3;
+  --main-botton-color-hover-active: #004085;
+  --main-botton-tx-color: #fff;
+  --del-botton-color: #dc3545;
+  --del-botton-color-hover: #c82333;
+  --del-botton-color-hover-active: #bd2130;
+  --del-botton-tx-color: #fff;
+  --addsub-botton-color: #28a745;
+  --addsub-botton-color-hover: #218838;
+  --addsub-botton-color-hover-active: #1e7e34;
+  --addsub-botton-tx-color: #fff;
+  --modal-bg-color: #00000066;
+  --modal-content-bg-color: #2c2c2e;
+  --close-color: #aaa;
+  --li-bg-color: #2c2c2e;
+  --tx-input-focus-border-color: #007bff;
+  --tx-input-focus-color-box-shadow: #007bff40;
+  --input-bg-color: #2c2c2e;
+  --input-font-color: #f5f5f5;
+}
+html {
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: var(--main-bg-color);
+  color: var(--main-font-color);
+  margin: 0 auto;
+  padding: 0px 30px 0px 30px;
+}
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: fixed;
+  bottom: 25px;
+  width: calc(100vw - 60px);
+  :not(:hover) {
+    opacity: 0.2;
+  }
+}
+
+h1 {
+  margin-top: 0px;
+  font-weight: 500;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form {
+  padding: 20px;
+  border-radius: 5px;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+button {
+  background-color: var(--main-botton-color);
+  color: var(--main-botton-tx-color);
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  padding: 6px 12px;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--main-botton-color-hover);
+}
+
+button:active {
+  background-color: var(--main-botton-color-hover-active);
+}
+
+li {
+  position: relative;
+  display: block;
+  line-height: 1.6;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: var(--li-bg-color);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  margin-bottom: 10px;
+}
+
+li:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0 2px 3px rgba(0, 0, 0, 0.22);
+}
+
+.checked {
+  text-decoration: line-through;
+  color: var(--main-font-color-checked);
+}
+
+.edit {
+  display: none;
+}
+
+li ul {
+  padding-left: 0;
+}
+
+li ul li {
+  margin-left: 20px;
+}
+
+li .text {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.delete-button {
+  background-color: var(--del-botton-color);
+  color: var(--del-botton-tx-color);
+  border: none;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  padding: 4px 8px;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: var(--del-botton-color-hover);
+}
+
+.delete-button:active {
+  background-color: var(--del-botton-color-hover-active);
+}
+
+.add-child-button {
+  background-color: var(--addsub-botton-color);
+  color: var(--addsub-botton-tx-color);
+  border: none;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  padding: 4px 8px;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.add-child-button:hover {
+  background-color: var(--addsub-botton-color-hover);
+}
+
+.add-child-button:active {
+  background-color: var(--addsub-botton-color-hover-active);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9876543210;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: var(--modal-bg-color);
+}
+
+.modal-content {
+  background-color: var(--modal-content-bg-color);
+  margin: 15% auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 400px;
+}
+
+.close {
+  color: var(--close-color);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+span.text {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.handle {
+  position: relative;
+}
+
+input[type="text"], input[type="email"], input[type="password"], textarea, select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  background-color: var(--input-bg-color);
+  color: var(--input-font-color);
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, textarea:focus, select:focus {
+  border-color: var(--tx-input-focus-border-color);
+  outline: none;
+  box-shadow: 0 0 0 0.2rem var(--tx-input-focus-color-box-shadow);
+}
+
+input[type="checkbox"] {
+  transform: scale(1.5);
+  margin: 10px;
+}
+
+/* タブコンテンツのスタイル */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border-top: none;
+}
+/* タブスタイル */
+.tab {
+  overflow: hidden;
+  border-bottom: 1px solid var(--main-font-color);
+}
+/* タブボタンスタイル */
+.tab button {
+  background-color: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+/* タブボタンのホバー時のスタイル */
+.tab button:hover {
+  background-color: var(--main-font-color-checked);
+}
+/* アクティブなタブのスタイル */
+.tab button.active {
+  background-color: var(--main-font-color);
+  color: var(--main-bg-color);
+}
+/* タブ1 (グラフ) */
+.circle-container {
+  position: relative;
+  height: 0vh;
+  top: 550px;
+  left: 50%;
+  width: 0vw;
+}
+.triangle {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 33px solid transparent; /* 左側の透明部分 */
+  border-right: 33px solid transparent; /* 右側の透明部分 */
+  border-bottom: 500px solid #3498db; /* 三角形の底辺 */
+  transform-origin: 50% 0%; /* 三角形の頂点を基準に回転 */
+}
+
+/* タブ2 (スケジュール) */
+.schedule-container {
+  max-width: 600px;
+  margin: 50px auto 100px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.schedule-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 11px 0;
+  border-bottom: 1px solid #ddd;
+}
+.schedule-item:last-child {
+  border-bottom: none;
+}
+.time {
+  font-weight: bold;
+  color: #333;
+  width: 100px;
+}
+.task {
+  color: #666;
+  flex-grow: 1;
+  padding-left: 10px;
+}
+#editForm {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--modal-bg-color);
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* 背景色を変更 */
+  z-index: 999;
+}
+
+.schedule-item.selected {
+  background-color: #d3d3d3; /* 選択中のアイテムの背景色 */
+}
+.schedule-item.dragging {
+  background-color: #a3a3a3; /* ドラッグ中のアイテムの背景色 */
+}
